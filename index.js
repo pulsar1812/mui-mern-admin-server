@@ -36,3 +36,16 @@ app.use('/client', clientRoutes)
 app.use('/general', generalRoutes)
 app.use('/management', managementRoutes)
 app.use('/sales', salesRoutes)
+
+// Connect to MongoDB and listen to PORT 5000
+const PORT = process.env.PORT || 5000
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(PORT, () =>
+      console.log(
+        `Server running in ${process.env.NODE_ENV} mode on Port ${PORT}`
+      )
+    )
+  })
+  .catch((err) => console.log('Connection error: ', err))

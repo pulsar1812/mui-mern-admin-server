@@ -9,6 +9,8 @@ import clientRoutes from './routes/client.js'
 import generalRoutes from './routes/general.js'
 import managementRoutes from './routes/management.js'
 import salesRoutes from './routes/sales.js'
+import User from './models/User.js'
+import { dataUser } from './data/index.js'
 
 // Configuration
 dotenv.config()
@@ -47,5 +49,8 @@ mongoose
         `Server running in ${process.env.NODE_ENV} mode on Port ${PORT}`
       )
     )
+
+    // Only add once
+    // User.insertMany(dataUser)
   })
   .catch((err) => console.log('Connection error: ', err))

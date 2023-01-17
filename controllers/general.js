@@ -1,7 +1,7 @@
 import User from '../models/User.js'
 
 // @desc    Get User
-// @route   GET /user/:id
+// @route   GET /general/user/:id
 // @access  Public
 export const getUser = async (req, res) => {
   try {

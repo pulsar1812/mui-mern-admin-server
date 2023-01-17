@@ -3,7 +3,7 @@ import { model, Schema } from 'mongoose'
 const TransactionSchema = new Schema(
   {
     userId: String,
-    cost: String,
+    cost: Number,
     products: {
       type: [Schema.Types.ObjectId],
       of: Number,
